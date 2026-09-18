@@ -34,6 +34,14 @@ class StudentDetailAPIView(APIView):
 
     permission_classes = [IsAuthenticated]
 
+    def get(self, request, id):
+
+        student = Student.objects.get(id=id)
+
+        serializer = StudentSerializer(student)
+
+        return Response(serializer.data)
+
     def put(self, request, id):
         student = Student.objects.get(id=id)
         serializer = StudentSerializer(student, data=request.data)
