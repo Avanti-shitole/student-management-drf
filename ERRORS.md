@@ -41,3 +41,25 @@ After that, the student list was displayed successfully.
 
 **What I learned:**
 For protected APIs, I need to provide valid authentication credentials/token.
+
+
+## Error #3 – Invalid Token
+
+**Error:**
+`Invalid token.`
+
+**URL:**
+`http://127.0.0.1:8000/api/students/`
+
+**Why:**
+I changed the valid token to an incorrect token.
+
+**Solution:**
+I used the correct valid token in Postman Authorization.
+
+**Result:**
+Student list displayed successfully.
+
+**What I learned:**
+The API checks whether the token is valid before allowing access.
+
