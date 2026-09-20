@@ -63,3 +63,26 @@ Student list displayed successfully.
 **What I learned:**
 The API checks whether the token is valid before allowing access.
 
+
+## Error #4 – Method Not Allowed
+
+**Error:**
+`Method "PUT" not allowed.`
+{
+    "detail": "Method \"PUT\" not allowed."
+}
+
+**URL:**
+`http://127.0.0.1:8000/api/students/`
+
+**Why:**
+I used the PUT method on an endpoint where PUT is not defined.
+
+**Solution:**
+I used the correct HTTP method supported by this endpoint.
+
+**Result:**
+The API worked successfully with the correct method.
+
+**What I learned:**
+Different API endpoints allow different HTTP methods like GET, POST, PUT and DELETE.
