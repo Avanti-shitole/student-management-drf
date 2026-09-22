@@ -68,6 +68,8 @@ class RegisterAPIView(APIView):
                 {"error": "Username and password are required"},
                 status=status.HTTP_400_BAD_REQUEST
             )
+        # Remove extra spaces before and after username 
+        username = username.strip()
 
         if User.objects.filter(username=username).exists():
             return Response(
@@ -88,7 +90,7 @@ class RegisterAPIView(APIView):
 class LoginAPIView(APIView):
 
     def post(self, request):
-        username = request.data.get('username')
+        username = request.data.get('username').strip()
         password = request.data.get('password')
 
         user = authenticate(
